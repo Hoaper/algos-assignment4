@@ -46,9 +46,11 @@ public class HashTable<K, V> {
         for (HashNode<K, V> node: chain[index]){
             if(node.getKey().equals(key)) {
                 chain[index].remove(node);
+                size--;
                 return node.getValue();
             }
         }
+        size--;
         return null;
     }
     public boolean contains(V value) {
@@ -66,5 +68,9 @@ public class HashTable<K, V> {
             }
         }
         return null;
+    }
+
+    public int getSize() {
+        return size;
     }
 }
