@@ -73,4 +73,13 @@ public class HashTable<K, V> {
     public int getSize() {
         return size;
     }
+
+    @Override
+    public String toString() {
+        String out = "";
+        for(int i = 0; i<this.chain.length;i++) {
+            out += "Bucket " + i + ": " + chain[i].size() + "\n";
+        }
+        return out;
+    }
 }

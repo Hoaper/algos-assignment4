@@ -20,5 +20,6 @@ public class Main {
             hashTable.put(new MyTestingClass(val), "Student " + val);
         }
 
+        System.out.println(hashTable);
     }
 }
