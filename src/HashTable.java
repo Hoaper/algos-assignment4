@@ -74,6 +74,13 @@ public class HashTable<K, V> {
         return size;
     }
 
+    /**
+     * replace
+     * @param key provides key that we need to calculate as hash
+     * @param oldValue value for replace
+     * @param newValue new value that replaces oldValue
+     * @return true if oldValue were replaced, else otherwise
+     * **/
     public boolean replace(K key, V newValue, V oldValue) {
         int index = hash(key);
         LinkedList<HashNode<K, V>> bucket = chain[index];
