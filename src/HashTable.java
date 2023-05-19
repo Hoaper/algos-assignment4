@@ -74,6 +74,22 @@ public class HashTable<K, V> {
         return size;
     }
 
+    public boolean replace(K key, V newValue, V oldValue) {
+        int index = hash(key);
+        LinkedList<HashNode<K, V>> bucket = chain[index];
+        if (bucket != null) {
+            for (HashNode<K, V> item: bucket) {
+                if(item.getValue().equals(oldValue)){
+                    item.setValue(newValue);
+                    return true;
+                }
+            }
+        }
+        return false;
+
+
+    }
+
     @Override
     public String toString() {
         String out = "";
